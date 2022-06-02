@@ -53,7 +53,7 @@ delimiter = response.get('delimiter') # Útil cuando se descarga un csv
 
 ### Descargar un elemento de una colección
 ```python
-dataset_id = '472AE6E9AD343E6'
+dataset_id = '472AE6E9AD343E6' # Modelos de fallas finitas del USGS
 collection_id = 'ID'
 fmt = 'csv'
 
