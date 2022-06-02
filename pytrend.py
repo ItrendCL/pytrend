@@ -116,6 +116,8 @@ class itrend_developer_tools():
         if element_id is not None:
             if not isinstance(element_id, str):
                 raise TypeError('element_id must be str, not %s' %type(element_id))
+
+        element_id = self._normalizeString(element_id)
         
         # Check credentials
         if access_key_id is None and secret_access_key is None:
@@ -162,3 +164,44 @@ class itrend_developer_tools():
                 raise Exception('Incorrect parameters. Check your dataset_id, fmt and, if given, element_id')
         else:
             raise Exception('Invalid credentials')
+
+    def _normalizeString(s1):
+        s2 = s1.replace(" ", '')
+        s2 = s2.replace("Á", 'A')
+        s2 = s2.replace("É", 'E')
+        s2 = s2.replace("Í", 'I')
+        s2 = s2.replace("Ó", 'O')
+        s2 = s2.replace("Ú", 'U')
+        s2 = s2.replace("á", 'a')
+        s2 = s2.replace("é", 'e')
+        s2 = s2.replace("í", 'i')
+        s2 = s2.replace("ó", 'o')
+        s2 = s2.replace("ú", 'u')
+        s2 = s2.replace("Ü", 'U')
+        s2 = s2.replace("ü", 'u')
+        s2 = s2.replace("Ñ", 'N')
+        s2 = s2.replace("ñ", 'n')
+        s2 = s2.replace(".", '')
+        s2 = s2.replace(",", '')
+        s2 = s2.replace(":", '')
+        s2 = s2.replace("_", '')
+        s2 = s2.replace("[", '')
+        s2 = s2.replace("]", '')
+        s2 = s2.replace("(", '')
+        s2 = s2.replace(")", '')
+        s2 = s2.replace("!", '')
+        s2 = s2.replace("?", '')
+        s2 = s2.replace("*", '')
+        s2 = s2.replace("-", '')
+        s2 = s2.replace("'", '')
+        s2 = s2.replace('"', '')
+        s2 = s2.replace("^", '')
+        s2 = s2.replace("<", '')
+        s2 = s2.replace(">", '')
+        s2 = s2.replace("{", '')
+        s2 = s2.replace("}", '')
+        s2 = s2.replace("#", '')
+        s2 = s2.replace("%", '')
+        s2 = s2.replace("~", '')
+        s2 = s2.replace("|", '')
+        return s2
