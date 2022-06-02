@@ -117,7 +117,7 @@ class itrend_developer_tools():
             if not isinstance(element_id, str):
                 raise TypeError('element_id must be str, not %s' %type(element_id))
 
-        element_id = self._normalizeString(element_id)
+            element_id = self._normalizeString(element_id)
         
         # Check credentials
         if access_key_id is None and secret_access_key is None:
@@ -165,7 +165,7 @@ class itrend_developer_tools():
         else:
             raise Exception('Invalid credentials')
 
-    def _normalizeString(s1):
+    def _normalizeString(self, s1):
         s2 = s1.replace(" ", '')
         s2 = s2.replace("Á", 'A')
         s2 = s2.replace("É", 'E')
