@@ -2,7 +2,7 @@
 
 La librería Python for Itrend (pytrend) permite acceder a los distintos conjuntos de datos de la Plataforma de Datos de Itrend. La librería es completamente abierta, pero para acceder a los datos se requieren credenciales de acceso administradas por Itrend propiamente tal.
 
-![itrend logo](https://itrend.cl/wp-content/uploads/2019/11/logo-color.svg "Itrend")
+<img src="logo.svg" width="400px" height="auto">
 
 - **Autor**: [Sebastián Castro](https://github.com/sebacastroh)
 - **Version**: 1.0.0
