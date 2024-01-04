@@ -1,0 +1,26 @@
+name: Test plugin version
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Get version
+        id: vars
+        run: |
+          tag=$(git describe --tags | cut -d "-" -f 1 | cut -d "v" -f 2)
+          echo "tag=$tag" >> $GITHUB_OUTPUT
+      - name: Check version in README.md
+        run: |
+          valid=$(grep "\- \*\*Version\*\*: ${{ steps.vars.outputs.tag }}" README.md | wc -l)
+          if [ "$valid" = "0" ]; then exit 1; fi
