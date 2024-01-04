@@ -58,7 +58,8 @@ class itrend_developer_tools():
 
         params = {
             'dataset_id': dataset_id,
-            'getFormats': 'true'
+            'getFormats': 'true',
+            'source': 'pytrend'
         }
         
         response = requests.get(self.itrendApi, params=params, headers=headers)
@@ -92,7 +93,8 @@ class itrend_developer_tools():
         params = {
             'dataset_id': dataset_id,
             'getFormats': 'true',
-            'collectionFormats': 'true'
+            'collectionFormats': 'true',
+            'source': 'pytrend'
         }
         
         response = requests.get(self.itrendApi, params=params, headers=headers)
@@ -136,7 +138,8 @@ class itrend_developer_tools():
         params = {
             'dataset_id': dataset_id,
             'fmt': fmt,
-            'element_id': element_id
+            'element_id': element_id,
+            'source': 'pytrend'
         }
         
         response = requests.get(self.itrendApi, params=params, headers=headers)

@@ -5,8 +5,10 @@ La librería Python for Itrend (pytrend) permite acceder a los distintos conjunt
 <img src="logo.svg" width="400px" height="auto">
 
 - **Autor**: [Sebastián Castro](https://github.com/sebacastroh)
-- **Version**: 1.0.0
-- **Fecha**: 02 de Mayo de 2022
+- **Version**: 1.0.1
+- **Fecha**: 04 de Enero de 2024
+
+Otras versiones, tanto anteriores como de desarrollo, están publicadas en la sección ```Releases```.
 
 ## Requisitos
 
