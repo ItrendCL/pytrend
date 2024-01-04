@@ -1,0 +1,140 @@
+{
+  "branches": [
+    "main",
+    {
+      "name": "dev",
+      "prerelease": true
+    }
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          {
+            "breaking": true,
+            "release": "major"
+          },
+          {
+            "type": "feat-itrend",
+            "release": "minor"
+          },
+          {
+            "type": "fix-itrend",
+            "release": "patch"
+          },
+          {
+            "type": "perf-itrend",
+            "release": "patch"
+          },
+          {
+            "type": "revert-itrend",
+            "release": "patch"
+          },
+          {
+            "type": "docs-itrend",
+            "release": "patch"
+          },
+          {
+            "type": "style-itrend",
+            "release": "patch"
+          },
+          {
+            "type": "refactor-itrend",
+            "release": "patch"
+          },
+          {
+            "type": "test-itrend",
+            "release": "patch"
+          },
+          {
+            "type": "build-itrend",
+            "release": "patch"
+          },
+          {
+            "type": "ci-itrend",
+            "release": false
+          },
+          {
+            "type": "chore-itrend",
+            "release": false
+          },
+          {
+            "scope": "no-release",
+            "release": false
+          }
+        ],
+        "parserOpts": {
+          "headerPattern": "^(\\w+\\-\\w+)(?:\\(([\\w\\$\\.\\-\\* ]*)\\))?\\: (.*)$"
+        }
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            {
+              "type": "feat-itrend",
+              "section": ":sparkles: Novedades",
+              "hidden": false
+            },
+            {
+              "type": "fix-itrend",
+              "section": ":bug: Correcciones",
+              "hidden": false
+            },
+            {
+              "type": "perf-itrend",
+              "section": ":fast_forward: Desempeño",
+              "hidden": false
+            },
+            {
+              "type": "revert-itrend",
+              "section": ":back: Restituciones"
+            },
+            {
+              "type": "docs-itrend",
+              "section": ":memo: Documentación",
+              "hidden": false
+            },
+            {
+              "type": "style-itrend",
+              "section": ":barber: Estilos",
+              "hidden": false
+            },
+            {
+              "type": "refactor-itrend",
+              "section": ":zap: Refactorizaciones",
+              "hidden": false
+            },
+            {
+              "type": "test-itrend",
+              "section": ":white_check_mark: Pruebas",
+              "hidden": false
+            },
+            {
+              "type": "build-itrend",
+              "section": ":hammer_and_wrench: Sistemas",
+              "hidden": false
+            },
+            {
+              "type": "ci-itrend",
+              "section": ":infinity: Integración continua",
+              "hidden": false
+            },
+            {
+              "type": "chore-itrend",
+              "hidden": true
+            }
+          ]
+        },
+        "parserOpts": {
+          "headerPattern": "^(\\w+\\-\\w+)(?:\\(([\\w\\$\\.\\-\\* ]*)\\))?\\: (.*)$"
+        }
+      }
+    ]
+  ]
+}
